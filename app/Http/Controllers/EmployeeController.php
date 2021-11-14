@@ -26,7 +26,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employee.create');
     }
 
     /**
@@ -37,7 +37,14 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
-        //
+        $employee = new Employee();
+        $employee->EmployeeNumber = $request->input('EmployeeNumber');
+        $employee->EmployeeFullName = $request->input('EmployeeFullName');
+        $employee->EmployeeEmail = $request->input('EmployeeEmail');
+        $employee->EmployeeAdress = $request->input('EmployeeAdress');
+       // $employee->create($request->all());
+        $employee->save();
+        return redirect()->route('employee.index');
     }
 
     /**

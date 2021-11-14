@@ -2,6 +2,9 @@
 
 @section("content")
 
+
+<a href="{{route('employee.create')}}" class="btn btn-sm btn-dark mb-3">New Employee</a>
+
 <div class="card">
     <div class="card-header">Employees List</div>
     <div class="card-body">

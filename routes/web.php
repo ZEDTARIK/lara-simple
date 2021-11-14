@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource("/employee", EmployeeController::class)->only("index", "destroy");
+Route::resource("/employee", EmployeeController::class)->except("edit", "update");
